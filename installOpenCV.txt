@@ -1,0 +1,29 @@
+apt install libeigen3-dev
+
+cmake \
+    -D CMAKE_BUILD_TYPE=RELEASE \
+    -D BUILD_NEW_PYTHON_SUPPORT=ON \
+    -D HAVE_opencv_python3=ON \
+    -D CMAKE_INSTALL_PREFIX=/usr/local/opencv-3.4.1.1 \
+    -D PYTHON_DEFAULT_EXECUTABLE=/home/mo/anaconda3/envs/python_3_6/bin/python3.6 \
+    -D EIGEN_INCLUDE_PATH=/usr/include/eigen3 \
+    -D INSTALL_C_EXAMPLES=ON \
+    -D INSTALL_PYTHON_EXAMPLES=ON \
+    -D WITH_TBB=ON \
+    -D WITH_V4L=ON \
+    -D WITH_QT=ON \
+    -D WITH_OPENGL=ON \
+    -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-3.4.1/modules \
+    -D BUILD_EXAMPLES=ON \
+    -D BUILD_opencv_python3=ON \
+    -D BUILD_opencv_python2=OFF \
+    -D PYTHON3_INCLUDE_DIR=/home/mo/anaconda3/envs/python_3_6/include/python3.6 \
+    -D PYTHON3_LIBRARY=/home/mo/anaconda3/envs/python_3_6/lib/libpython3.6m.so ..
+
+make -j8
+
+sudo make install
+
+
+ln -s /usr/local/opencv-3.4.1.1/lib/python3.6/site-packages/cv2.cpython-36m-x86_64-linux-gnu.so ~/anaconda3/envs/python_3_6/lib/python3.6/site-packages/cv2.so
+
