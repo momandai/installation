@@ -1,0 +1,14 @@
+sudo add-apt-repository ppa:graphics-drivers/ppa
+sudo apt-get update
+
+ubuntu-drivers devices
+
+ctrl+alt+F1
+sudo service lightdm stop
+
+sudo apt-get install nvidia-396
+sudo reboot
+
+nvidia-smi
+
+nvidia-setting
