@@ -1,0 +1,3 @@
+sudo pat install libatlas-base-dev
+
+http://caffe.berkeleyvision.org/installation.html#compilation
